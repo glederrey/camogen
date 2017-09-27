@@ -7,7 +7,7 @@
 #
 # Based on the code of Ulf Alstrom (http://www.happyponyland.net/camogen.php)
 
-from helpers import *
+from camogen.helpers import *
 
 
 class Polygon:

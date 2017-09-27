@@ -29,20 +29,29 @@ class Pattern:
             self.height = np.abs(parameters['height'])
             self.polygon_size = max(150, np.abs(parameters['polygon_size']))
             self.color_bleed = np.abs(parameters['color_bleed'])
-            self.max_depth = min(15, np.abs(parameters['max_depth']))
+            if 'max_depth' in parameters.keys():
+                self.max_depth = min(15, np.abs(parameters['max_depth']))
+            else:
+                self.max_depth = 15
             self.colors = parameters['colors']
 
             # Spots
-            self.spots_nbr = min(20000, np.abs(parameters['spots']['amount']))
-            self.spots_radius_min = max(5, min(100, np.abs(parameters['spots']['radius']['min'])))
-            self.spots_radius_max = max(5, min(100, np.abs(parameters['spots']['radius']['max'])))
-            self.spots_sampling = np.abs(parameters['spots']['sampling_variation'])
+            if 'spots' in parameters.keys():
+                self.spots_nbr = min(20000, np.abs(parameters['spots']['amount']))
+                self.spots_radius_min = max(5, min(100, np.abs(parameters['spots']['radius']['min'])))
+                self.spots_radius_max = max(5, min(100, np.abs(parameters['spots']['radius']['max'])))
+                self.spots_sampling = np.abs(parameters['spots']['sampling_variation'])
+            else:
+                self.spots_nbr = 0
 
             # Pixelize
-            self.pixelize_percentage = min(1, np.abs(parameters['pixelize']['percentage']))
-            self.pixelize_sampling = np.abs(parameters['pixelize']['sampling_variation'])
-            self.pixelize_density_x = max(10, np.abs(parameters['pixelize']['density']['x']))
-            self.pixelize_density_y = max(10, np.abs(parameters['pixelize']['density']['y']))
+            if 'pixelize' in parameters.keys():
+                self.pixelize_percentage = min(1, np.abs(parameters['pixelize']['percentage']))
+                self.pixelize_sampling = np.abs(parameters['pixelize']['sampling_variation'])
+                self.pixelize_density_x = max(10, np.abs(parameters['pixelize']['density']['x']))
+                self.pixelize_density_y = max(10, np.abs(parameters['pixelize']['density']['y']))
+            else:
+                self.pixelize_percentage = 0
 
             # List of Polygons
             self.list_polygons = []

@@ -8,7 +8,7 @@
 # Based on the code of Ulf Alstrom (http://www.happyponyland.net/camogen.php)
 
 
-from vertex import *
+from camogen.vertex import *
 import numpy as np
 
 

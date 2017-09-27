@@ -8,9 +8,9 @@
 # Based on the code of Ulf Alstrom (http://www.happyponyland.net/camogen.php)
 
 
-from polygon import *
-from pattern import *
-from helpers import *
+from camogen.polygon import *
+from camogen.pattern import *
+from camogen.helpers import *
 
 from PIL import Image, ImageDraw
 
