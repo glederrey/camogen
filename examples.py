@@ -12,7 +12,7 @@ import camogen
 # Generate the examples given
 
 # Green Blots
-parameters = {'width': 700, 'height': 700, 'polygon_size': 200, 'color_bleed': 6, 'max_depth': 15,
+parameters = {'width': 700, 'height': 700, 'polygon_size': 200, 'color_bleed': 6,
               'colors': ['#264722', '#023600', '#181F16'],
              'spots': {'amount': 20000, 'radius': {'min': 7, 'max': 14}, 'sampling_variation': 10}}
 
@@ -20,7 +20,7 @@ image = camogen.generate(parameters)
 image.save('./images/green_blots.png')
 
 # Mighty Swede
-parameters = {'width': 700, 'height': 700, 'polygon_size': 400, 'color_bleed': 0, 'max_depth': 15,
+parameters = {'width': 700, 'height': 700, 'polygon_size': 400, 'color_bleed': 0,
               'colors': ['#668F46', '#4A6B3A', '#145000', '#003022']}
 
 image = camogen.generate(parameters)

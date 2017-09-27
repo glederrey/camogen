@@ -30,10 +30,14 @@ class Pattern:
             self.polygon_size = max(150, np.abs(parameters['polygon_size']))
             self.color_bleed = np.abs(parameters['color_bleed'])
             if 'max_depth' in parameters.keys():
-                self.max_depth = min(15, np.abs(parameters['max_depth']))
+                self.max_depth = max(0, np.abs(parameters['max_depth']))
             else:
                 self.max_depth = 15
             self.colors = parameters['colors']
+
+            if len(self.colors) == 0:
+                self.colors = ['#000000']
+
 
             # Spots
             if 'spots' in parameters.keys():
