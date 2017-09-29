@@ -1,7 +1,7 @@
 # camogen
 
 This repository is a **camo**uflage **gen**erator. The code is originally from Ulf Åström in PHP. You can find 
-his applet here: [http://www.happyponyland.net/camogen.php](http://www.happyponyland.net/camogen.php). I simply updated 
+his applet here: [http://www.happyponyland.net](http://www.happyponyland.net). I simply updated 
 and wrote his code in Python instead of PHP. 
 
 ## How to use
