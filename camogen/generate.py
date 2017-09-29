@@ -5,7 +5,7 @@
 #
 # Distributed under terms of the MIT license.
 #
-# Based on the code of Ulf Alstrom (http://www.happyponyland.net/camogen.php)
+# Based on the code of Ulf Astrom (http://www.happyponyland.net/camogen.php)
 
 
 from camogen.polygon import *
