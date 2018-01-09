@@ -4,6 +4,8 @@ This repository is a **camo**uflage **gen**erator. The code is originally from U
 his applet here: [http://www.happyponyland.net](http://www.happyponyland.net). I simply updated 
 and wrote his code in Python instead of PHP. 
 
+**WARNING**  *The code only works with Python3 for the moment!*  **WARNING**
+
 ## How to use
 
 Here is a very simple example how to use the generator:
