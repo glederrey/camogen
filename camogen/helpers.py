@@ -309,7 +309,7 @@ def pixelize(pattern, image, draw):
 
         # We loop through each pixel.
         for x in range(int(pixel_w/2), pattern.width, pixel_w):
-            for y in range(int(pixel_h / 2), pattern.width, pixel_h):
+            for y in range(int(pixel_h / 2), pattern.height, pixel_h):
 
                 # Check if we pixelize this pixel
                 if pattern.pixelize_percentage > np.random.rand():
@@ -319,10 +319,8 @@ def pixelize(pattern, image, draw):
                     sample_x = min(pattern.width - 1, max(0, sample_x))
 
                     sample_y = y - pattern.pixelize_sampling + np.random.randint(pattern.pixelize_sampling * 2 + 1)
-                    sample_y = min(pattern.width-1, max(0, sample_y))
+                    sample_y = min(pattern.height-1, max(0, sample_y))
                     r, g, b = image.getpixel((int(sample_x), int(sample_y)))
                     hex = '#%02x%02x%02x' % (r, g, b)
 
                     draw.rectangle((x - pixel_w/2, y - pixel_h/2, x + pixel_w/2, y + pixel_h/2), fill=hex)
-
-
