@@ -23,7 +23,7 @@ class Pattern:
         :param parameters: JSON of the parameters
         """
 
-       try:
+        try:
             # General parameters
             if np.abs(parameters['width']) > 10000 or np.abs(parameters['height']) > 10000:
                 print("WARNING: Resolution (either width or height) is quite large (>10000). Expect significant generation and loading times.")
