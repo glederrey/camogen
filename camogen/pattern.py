@@ -25,9 +25,11 @@ class Pattern:
 
         try:
             # General parameters
+            if np.abs(parameters['width']) > 10000 or np.abs(parameters['height']) > 10000:
+                print("WARNING: Resolution (either width or height) is quite large (>10000). Expect significant generation and loading times.")
             self.width = np.abs(parameters['width'])
             self.height = np.abs(parameters['height'])
-            self.polygon_size = max(150, np.abs(parameters['polygon_size']))
+            self.polygon_size = max(0, np.abs(parameters['polygon_size']))
             self.color_bleed = np.abs(parameters['color_bleed'])
             if 'max_depth' in parameters.keys():
                 self.max_depth = max(0, np.abs(parameters['max_depth']))
@@ -41,25 +43,30 @@ class Pattern:
 
             # Spots
             if 'spots' in parameters.keys():
-                self.spots_nbr = min(20000, np.abs(parameters['spots']['amount']))
-                self.spots_radius_min = max(5, min(100, np.abs(parameters['spots']['radius']['min'])))
-                self.spots_radius_max = max(5, min(100, np.abs(parameters['spots']['radius']['max'])))
-                self.spots_sampling = np.abs(parameters['spots']['sampling_variation'])
+                if np.abs(parameters['spots']['amount']) > 50000:
+                    print("Maximum value for spots amount is capped at 50000 due to performance reasons.")
+                self.spots_nbr = min(50000, np.abs(parameters['spots']['amount']))
+                self.spots_radius_min = max(0, np.abs(parameters['spots']['radius']['min']))
+                self.spots_radius_max = max(0, np.abs(parameters['spots']['radius']['max']))
+                self.spots_sampling = max(0, np.abs(parameters['spots']['sampling_variation']))
             else:
                 self.spots_nbr = 0
 
             # Pixelize
             if 'pixelize' in parameters.keys():
+                if np.abs(parameters['pixelize']['percentage']) > 1:
+                    print("Maximum value for pixelize percentage is capped at 1.")
                 self.pixelize_percentage = min(1, np.abs(parameters['pixelize']['percentage']))
                 self.pixelize_sampling = np.abs(parameters['pixelize']['sampling_variation'])
-                self.pixelize_density_x = max(10, np.abs(parameters['pixelize']['density']['x']))
-                self.pixelize_density_y = max(10, np.abs(parameters['pixelize']['density']['y']))
+                self.pixelize_density_x = max(1, np.abs(parameters['pixelize']['density']['x']))
+                self.pixelize_density_y = max(1, np.abs(parameters['pixelize']['density']['y']))
             else:
                 self.pixelize_percentage = 0
 
             # List of Polygons
             self.list_polygons = []
             self.nbr_polygons = 0
+
 
         except KeyError:
             raise KeyError("Please check that your parameter dictionary is correctly written.")

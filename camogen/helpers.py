@@ -269,8 +269,17 @@ def add_spots(pattern, image, draw):
 
     spots_to_add = pattern.spots_nbr
     while spots_to_add:
-
-        # Radius of the spot
+        # Error handling:
+        if (pattern.width % 2) > 0:
+            raise ValueError('Pattern width needs to be even.') 
+        if (pattern.height % 2) > 0:
+            raise ValueError('Pattern height needs to be even.')
+        if pattern.spots_radius_min >= pattern.width or pattern.spots_radius_min >= pattern.height:
+            raise ValueError('Minimum spot radius needs to be smaller than either width or height.') 
+            
+        # Radius of the spot 
+        if pattern.spots_radius_min >= pattern.spots_radius_max:
+            raise ValueError('Minimum spot radius needs to be smaller than maximum spot radius.')     
         spot_radius = np.random.randint(pattern.spots_radius_min, pattern.spots_radius_max)/2
 
         # Position of the spot
