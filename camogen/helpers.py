@@ -291,7 +291,7 @@ def add_spots(pattern, image, draw):
         sample_x = min(pattern.width-1, max(0, sample_x))
 
         sample_y = spot_y - pattern.spots_sampling + np.random.randint(pattern.spots_sampling * 2 + 1)
-        sample_y = min(pattern.width-1, max(0, sample_y))
+        sample_y = min(pattern.height-1, max(0, sample_y))
 
         # Get the color at this spot
         r, g, b = image.getpixel((int(sample_x), int(sample_y)))
