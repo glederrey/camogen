@@ -82,4 +82,4 @@ If you have questions about the generation of this patterns, you should ask Ulf 
 can find his contact page here: [http://www.happyponyland.net/contact.php](http://www.happyponyland.net/contact.php)
 
 If you have questions about the Python code or if you want to improve it, you can always submit an issue or a PR. You can 
-also contact me using my email adress: [gael.lederrey@epfl.ch](mailto:gael.lederrey@epfl.ch)
+also contact me using my email adress: [glederre@gmail.com](mailto:glederre@gmail.com)
