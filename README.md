@@ -4,7 +4,10 @@ This repository is a **camo**uflage **gen**erator. The code is originally from U
 his applet here: [http://www.happyponyland.net](http://www.happyponyland.net). I simply updated 
 and wrote his code in Python instead of PHP. 
 
-**WARNING**  *The code only works with Python3 for the moment!*  **WARNING**
+You need to install the following libraries to run the code:
+```
+pip install numpy Pillow
+```
 
 ## How to use
 
