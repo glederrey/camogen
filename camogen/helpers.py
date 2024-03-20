@@ -29,10 +29,10 @@ def dist_vertices(v1, v2):
     :return: distance
     """
 
-    if type(v1).__name__ != 'Vertex':
+    if v1.__class__.__name__ != 'Vertex':
         raise ValueError("Element v1 should be of the class Vertex")
 
-    if type(v2).__name__ != 'Vertex':
+    if v2.__class__.__name__ != 'Vertex':
         raise ValueError("Element v2 should be of the class Vertex")
 
     return np.sqrt((v1.x - v2.x) ** 2 + (v1.y - v2.y) ** 2)
@@ -48,10 +48,10 @@ def edge_split(v1, v2, frac):
     :return: new Vertex
     """
 
-    if type(v1).__name__ != 'Vertex':
+    if v1.__class__.__name__ != 'Vertex':
         raise ValueError("Element v1 should be of the class Vertex")
 
-    if type(v2).__name__ != 'Vertex':
+    if v2.__class__.__name__ != 'Vertex':
         raise ValueError("Element v2 should be of the class Vertex")
 
     if frac >= 1 or frac <= 0:
@@ -84,16 +84,16 @@ def new_edge(va1, va2, vb1, vb2):
     :return: list[Vertex]
     """
 
-    if type(va1).__name__ != 'Vertex':
+    if va1.__class__.__name__ != 'Vertex':
         raise ValueError("Element va1 should be of the class Vertex")
 
-    if type(va2).__name__ != 'Vertex':
+    if va2.__class__.__name__ != 'Vertex':
         raise ValueError("Element va2 should be of the class Vertex")
 
-    if type(vb1).__name__ != 'Vertex':
+    if vb1.__class__.__name__ != 'Vertex':
         raise ValueError("Element vb1 should be of the class Vertex")
 
-    if type(vb2).__name__ != 'Vertex':
+    if vb2.__class__.__name__ != 'Vertex':
         raise ValueError("Element vb2 should be of the class Vertex")
 
     # Compute the fractions

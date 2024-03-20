@@ -51,7 +51,7 @@ class Polygon:
 
         :param v: Vertex
         """
-        if type(v).__name__ != 'Vertex':
+        if v.__class__.__name__ != 'Vertex':
             raise ValueError("Element should be of the class Vertex")
 
         self.list_vertices.append(v)
@@ -64,7 +64,7 @@ class Polygon:
         """
 
         for v in vs:
-            if type(v).__name__ != 'Vertex':
+            if v.__class__.__name__ != 'Vertex':
                 raise ValueError("Element should be of the class Vertex")
 
         self.list_vertices.extend(vs)

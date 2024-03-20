@@ -24,10 +24,10 @@ def generate_polygons(pattern, polygon, depth):
     :param depth: [int] Depth of the recursion
     """
 
-    if type(pattern).__name__ != 'Pattern':
+    if pattern.__class__.__name__ != 'Pattern':
         raise ValueError("Element pattern should be of the class Pattern")
 
-    if type(polygon).__name__ != 'Polygon':
+    if polygon.__class__.__name__ != 'Polygon':
         raise ValueError("Element polygon should be of the class Polygon")
 
     # Check if the circumference of the Polygon is small enough. If it's the case, we stop the recursion

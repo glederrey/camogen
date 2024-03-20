@@ -77,7 +77,7 @@ class Pattern:
 
         :param p: Polygon
         """
-        if type(p).__name__ != 'Polygon':
+        if p.__class__.__name__ != 'Polygon':
             raise ValueError("Element should be of the class Polygon")
 
         self.list_polygons.append(p)
