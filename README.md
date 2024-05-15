@@ -1,10 +1,13 @@
 # camogen
 
 This repository is a **camo**uflage **gen**erator. The code is originally from Ulf Åström in PHP. You can find 
-his applet here: [http://www.happyponyland.net](http://www.happyponyland.net). Website seems to be down. =( I simply updated 
-and wrote his code in Python instead of PHP. 
+his applet here: [http://www.happyponyland.net](http://www.happyponyland.net). Sadly, his website is down. 
 
-You need to install the following libraries to run the code:
+However, [gammmalogic](https://github.com/gammalogic) decided to rewrite camogen in PHP (the loop is complete) and propose a new webapp. You can find the updated code here: [https://github.com/gammalogic/camogen-php](https://github.com/gammalogic/camogen-php) 
+
+You can also try it directly here: **[https://camogen-php.com/](https://camogen-php.com/)**
+
+If you still want to use the Python version, you need to install the following libraries to run the code:
 ```
 pip install numpy Pillow
 ```
